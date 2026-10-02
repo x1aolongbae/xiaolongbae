@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Activity Compilation</title>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top" id="home">
+    <!-- To use your school logo, replace the .bow span with: <img src="YOUR-LOGO-URL" height="40" alt="School logo"> -->
+    <div class="logo"><span class="bow"></span><span>Mapúa Malayan Colleges Laguna</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#activities">Activities</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <span class="bow"></span>
+    <h1>Student Activity Compilation</h1>
+    <a class="btn" href="#featured">Explore Activities</a>
+  </section>
+
+  <h2 id="featured">Featured Activities</h2>
+  <div class="cards" id="cards"></div>
+
+  <h2 id="activities">All Activities</h2>
+  <div class="list" id="list"></div>
+
+  <h2 id="about">About</h2>
+  <p class="about">This page collects the activities I completed in class. Each project was built with HTML and CSS to practice layout, design and responsive thinking. Select "View Project" to open any activity.</p>
+  <ul class="contact">
+    <li><span>MCL live account</span><a href="mailto:2026kctrinidad@live.mcl.edu.ph">2026kctrinidad@live.mcl.edu.ph</a></li>
+    <li><span>Contact number</span><a href="tel:09289620378">09289620378</a></li>
+    <li><span>Personal email</span><a href="mailto:keisha3nidad@gmail.com">keisha3nidad@gmail.com</a></li>
+  </ul>
+
+  <footer>made with <3 by Kae</footer>
+</div>
+
+<script>
+
+var IMGS = {
+  "portfolio":   "https://uploads.onecompiler.io/452whndub/454y2mvqp/IMG_7064.JPG",
+  "marketplace": "https://uploads.onecompiler.io/452whndub/454y2mvqp/IMG_6637.JPG",
+  "responsive":  "https://uploads.onecompiler.io/452whndub/454y2mvqp/LAST%20PIC.JPG"
+};
+
+</script>
+<script>
+
+var projects = [
+  { title: "Personal Portfolio", img: IMGS.portfolio, link: "https://onecompiler.com/html/454yfcu8c" },
+  { title: "Marketplace", img: IMGS.marketplace, link: "https://onecompiler.com/html/454zxrmwq" },
+  { title: "Finals",        img: IMGS.responsive, link: "" }
+];
+var activities = [
+  { name: "Personal Portfolio" },
+  { name: "Marketplace" },
+  { name: "Finals" }
+];
+
+var cards = document.getElementById("cards");
+projects.forEach(function (p) {
+  var d = document.createElement("div");
+  d.className = "card";
+  d.innerHTML = "<span class='bow'></span><div class='thumb'><img src='" + p.img + "' alt='" + p.title + " cover'></div><h3>" + p.title + "</h3>" + (p.link
+    ? "<a class='btn' target='_blank' rel='noopener' href='" + p.link + "'>View Project</a>"
+    : "<span class='btn off'>Coming soon</span>");
+  cards.appendChild(d);
+});
+
+var list = document.getElementById("list");
+activities.forEach(function (a) {
+  var d = document.createElement("div");
+  d.innerHTML = "<b>" + a.name + "</b>";
+  list.appendChild(d);
+});
+</script>
+</body>
+</html>
+
+<style>
+:root{
+  --cream:#fff8f3;--blush:#fde8ee;--pink:#f6c3d2;--rose:#e58fa8;--deep:#8a3b55;--ink:#5a2a3c;--mute:#a1667b;
+  --bow:url("https://uploads.onecompiler.io/452whndub/454y2mvqp/Untitled%20design.svg");
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:Quicksand,"Segoe UI",sans-serif;
+  background:var(--cream) radial-gradient(circle,#f9d3df 1.5px,transparent 2px) 0 0/26px 26px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+
+.bow{display:inline-block;width:46px;height:46px;background:var(--bow) center/contain no-repeat}
+
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0;flex-wrap:wrap;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Pinyon Script",cursive;font-size:1.6rem;color:var(--deep)}
+nav a{margin-left:22px;color:var(--deep);text-decoration:none;font-weight:700}
+nav a:hover{color:var(--rose);text-decoration:underline wavy}
+
+.hero{position:relative;text-align:center;padding:70px 20px 90px;border:3px dotted var(--rose);border-radius:28px;
+  background:linear-gradient(180deg,#ffe3ec,#fbd0de 60%,#f6bfd1);box-shadow:0 8px 24px rgba(229,143,168,.25)}
+.hero .bow{width:100px;height:100px;margin-bottom:4px}
+.hero h1{margin:0 0 26px;font-family:"Pinyon Script",cursive;font-weight:400;font-size:clamp(2.8rem,9vw,5rem);line-height:1.05;color:var(--deep)}
+.btn{display:inline-block;padding:12px 28px;border-radius:999px;background:var(--rose);color:#fff;font-weight:700;text-decoration:none;
+  border:2px solid #fff;box-shadow:0 0 0 2px var(--rose);font-size:1rem}
+.btn:hover{background:#d9708f}
+
+.btn.off{background:var(--pink);box-shadow:0 0 0 2px var(--pink);color:var(--deep);cursor:not-allowed}
+h2{text-align:center;margin:56px 0 24px;font-family:"Cormorant Garamond",serif;font-size:2rem;color:var(--deep)}
+h2::before,h2::after{content:"\2661";color:var(--rose);margin:0 12px;font-size:1.2rem}
+
+
+.cards{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{position:relative;background:#fff;border:2px solid var(--pink);border-radius:22px;padding:14px 14px 22px;text-align:center;
+  box-shadow:0 0 0 5px var(--blush),0 8px 18px rgba(229,143,168,.2)}
+.card .bow{position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:60px;height:60px;z-index:2}
+.thumb{height:170px;border-radius:14px;margin-bottom:14px;background:#fff;border:1.5px solid var(--blush);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.thumb img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.card h3{margin:0 0 16px;font-family:"Cormorant Garamond",serif;font-size:1.4rem;color:var(--deep)}
+.card .btn{padding:9px 20px;font-size:.95rem}
+
+.list{background:#fff;border:2px dotted var(--rose);border-radius:20px;padding:6px 22px}
+.list div{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1.5px dashed var(--pink)}
+.list div:last-child{border:0}
+.list span{color:var(--mute)}
+.about{max-width:58ch;margin:0 auto;text-align:center;line-height:1.7;color:var(--ink)}
+.contact{list-style:none;max-width:480px;margin:22px auto 0;padding:6px 22px;background:#fff;border:2px dotted var(--rose);border-radius:20px}
+.contact li{display:flex;justify-content:space-between;gap:4px 14px;flex-wrap:wrap;padding:12px 0;border-bottom:1.5px dashed var(--pink)}
+.contact li:last-child{border:0}
+.contact span{color:var(--mute)}
+.contact a{color:var(--deep);font-weight:700;text-decoration:none;overflow-wrap:anywhere}
+.contact a:hover{color:var(--rose);text-decoration:underline wavy}
+footer{text-align:center;margin:56px 0 30px;color:var(--mute);font-family:"Pinyon Script",cursive;font-size:1.5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
